@@ -1,0 +1,1389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Parks &amp; Rec Jobs — Hamilton County, Ohio</title>
+<meta name="description" content="49 parks and recreation job openings across Hamilton County, Ohio. Snapshot taken April 20, 2026." />
+<style>
+  :root {
+    --bg: #f6f7f4;
+    --surface: #ffffff;
+    --text: #1d2321;
+    --muted: #5f6b68;
+    --border: #e1e6e1;
+    --accent: #2d6a4f;
+    --radius: 14px;
+    --shadow: 0 1px 2px rgba(20,40,30,.05), 0 4px 14px rgba(20,40,30,.06);
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.45;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%;
+  }
+  .wrap { max-width: 1100px; margin: 0 auto; padding: 20px 16px 60px; }
+  header {
+    padding: 8px 0 20px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 22px;
+  }
+  h1 {
+    font-size: 22px;
+    margin: 0 0 6px;
+    letter-spacing: -0.01em;
+  }
+  header p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 14px;
+  }
+  header .stats {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-top: 8px;
+    font-size: 13px;
+    color: var(--muted);
+  }
+  header .stats b { color: var(--text); font-weight: 600; }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  @media (min-width: 640px) {
+    .grid { grid-template-columns: 1fr 1fr; gap: 14px; }
+    h1 { font-size: 26px; }
+    .wrap { padding: 28px 24px 80px; }
+  }
+  @media (min-width: 960px) {
+    .grid { grid-template-columns: 1fr 1fr 1fr; }
+  }
+
+  .tile {
+    --accent: #2d6a4f;
+    appearance: none;
+    -webkit-appearance: none;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 16px 16px 18px;
+    text-align: left;
+    cursor: pointer;
+    color: inherit;
+    font: inherit;
+    transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease;
+    border-top: 4px solid var(--accent);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-height: 140px;
+  }
+  .tile:hover, .tile:focus-visible {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 6px rgba(20,40,30,.08), 0 10px 22px rgba(20,40,30,.08);
+    outline: none;
+    border-color: #c8d2cb;
+  }
+  .tile:active { transform: translateY(0); }
+
+  .chip {
+    display: inline-block;
+    align-self: flex-start;
+    background: var(--accent);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .02em;
+    text-transform: uppercase;
+    padding: 4px 9px;
+    border-radius: 999px;
+    white-space: nowrap;
+  }
+  .pos {
+    margin: 2px 0 2px;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.3;
+  }
+  .pay {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--accent);
+  }
+  .meta {
+    font-size: 13px;
+    color: var(--muted);
+    margin-top: auto;
+  }
+
+  /* Modal */
+  .modal {
+    position: fixed;
+    inset: 0;
+    z-index: 50;
+    display: grid;
+    place-items: end center;
+  }
+  @media (min-width: 640px) {
+    .modal { place-items: center; }
+  }
+  .modal[hidden] { display: none; }
+  .modal-backdrop {
+    position: absolute; inset: 0;
+    background: rgba(15,25,20,.45);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+  }
+  .modal-card {
+    position: relative;
+    background: var(--surface);
+    border-radius: 18px 18px 0 0;
+    width: 100%;
+    max-width: 560px;
+    max-height: 92vh;
+    overflow: auto;
+    padding: 22px 20px 24px;
+    box-shadow: 0 -6px 30px rgba(0,0,0,.2);
+    border-top: 4px solid var(--accent);
+    animation: slideUp .22s ease;
+  }
+  @media (min-width: 640px) {
+    .modal-card {
+      border-radius: 18px;
+      box-shadow: 0 20px 60px rgba(0,0,0,.25);
+      animation: fadeIn .18s ease;
+    }
+  }
+  @keyframes slideUp { from { transform: translateY(20px); opacity: .6; } to { transform: none; opacity: 1; } }
+  @keyframes fadeIn { from { opacity: 0; transform: scale(.98); } to { opacity: 1; transform: none; } }
+
+  .modal-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    appearance: none;
+    background: #f0f2ee;
+    border: none;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    font-size: 22px;
+    line-height: 1;
+    color: #555;
+    cursor: pointer;
+  }
+  .modal-close:hover { background: #e5e8e3; }
+
+  .modal-pos {
+    margin: 12px 0 14px;
+    font-size: 20px;
+    line-height: 1.3;
+  }
+  .details {
+    margin: 0 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .details > div {
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    gap: 10px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .details > div:last-child { border-bottom: none; }
+  .details dt {
+    margin: 0;
+    font-size: 12px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: .04em;
+    padding-top: 2px;
+  }
+  .details dd {
+    margin: 0;
+    font-size: 14px;
+  }
+  .details dd.big {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--accent);
+  }
+  .apply {
+    display: block;
+    text-align: center;
+    background: var(--accent);
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 14px 18px;
+    border-radius: 10px;
+    font-size: 15px;
+    touch-action: manipulation;
+  }
+  .apply:hover { filter: brightness(1.08); }
+  .apply:active { filter: brightness(.95); }
+
+  footer {
+    margin-top: 40px;
+    padding-top: 18px;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 12.5px;
+    line-height: 1.55;
+  }
+  footer p { margin: 4px 0; }
+  footer a { color: var(--muted); }
+
+  body.modal-open { overflow: hidden; }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>Parks &amp; Rec Jobs — Hamilton County, Ohio</h1>
+      <p>Tap a tile for details and the application link.</p>
+      <div class="stats">
+        <span><b>49</b> openings</span>
+        <span>across <b>8</b> employers</span>
+        <span>snapshot: <b>April 20, 2026</b></span>
+      </div>
+    </header>
+
+    <main class="grid" id="grid">
+      <button class="tile" data-idx="0" style="--accent:#1e5fa8">
+        <span class="chip">CRC</span>
+        <h3 class="pos">Municipal Worker (Recreation-Center Staff)</h3>
+        <div class="pay">$36,504 / yr</div>
+        <div class="meta">Part-time</div>
+      </button>
+      <button class="tile" data-idx="1" style="--accent:#1e5fa8">
+        <span class="chip">CRC</span>
+        <h3 class="pos">Municipal Worker (Recreation-Outdoor Maintenance)</h3>
+        <div class="pay">$38,313.60 / yr</div>
+        <div class="meta">Part-time</div>
+      </button>
+      <button class="tile" data-idx="2" style="--accent:#1e5fa8">
+        <span class="chip">CRC</span>
+        <h3 class="pos">Aquatics Specialist</h3>
+        <div class="pay">$13.33 – $15.30 / hr</div>
+        <div class="meta">Seasonal</div>
+      </button>
+      <button class="tile" data-idx="3" style="--accent:#1e5fa8">
+        <span class="chip">CRC</span>
+        <h3 class="pos">Head Guard</h3>
+        <div class="pay">$19.00 / hr</div>
+        <div class="meta">Seasonal</div>
+      </button>
+      <button class="tile" data-idx="4" style="--accent:#1e5fa8">
+        <span class="chip">CRC</span>
+        <h3 class="pos">Lifeguard</h3>
+        <div class="pay">$16.00 – $18.00 / hr</div>
+        <div class="meta">Seasonal</div>
+      </button>
+      <button class="tile" data-idx="5" style="--accent:#1e5fa8">
+        <span class="chip">CRC</span>
+        <h3 class="pos">Pool Manager</h3>
+        <div class="pay">$22.00 / hr</div>
+        <div class="meta">Seasonal</div>
+      </button>
+      <button class="tile" data-idx="6" style="--accent:#1e5fa8">
+        <span class="chip">CRC</span>
+        <h3 class="pos">Pool Monitor</h3>
+        <div class="pay">$16.00 / hr</div>
+        <div class="meta">Seasonal</div>
+      </button>
+      <button class="tile" data-idx="7" style="--accent:#1e5fa8">
+        <span class="chip">CRC</span>
+        <h3 class="pos">Recreation Program Leader (Y2WK Community Partner, ages 14-24)</h3>
+        <div class="pay">$27,726.40 / yr</div>
+        <div class="meta">Seasonal</div>
+      </button>
+      <button class="tile" data-idx="8" style="--accent:#1e5fa8">
+        <span class="chip">CRC</span>
+        <h3 class="pos">Recreation Specialist (Main Office)</h3>
+        <div class="pay">$27,726.40 – $31,824 / yr</div>
+        <div class="meta">Seasonal</div>
+      </button>
+      <button class="tile" data-idx="9" style="--accent:#1e5fa8">
+        <span class="chip">CRC</span>
+        <h3 class="pos">Recreation Specialist (Bond Hill, Corryville, Hartwell, Madisonville, Mt. Washington, Eastside)</h3>
+        <div class="pay">$27,726.40 – $31,824 / yr</div>
+        <div class="meta">Seasonal</div>
+      </button>
+      <button class="tile" data-idx="10" style="--accent:#1e5fa8">
+        <span class="chip">CRC</span>
+        <h3 class="pos">Recreation Specialist (Rec@Nite Special Events)</h3>
+        <div class="pay">$27,726.40 – $31,824 / yr</div>
+        <div class="meta">Seasonal</div>
+      </button>
+      <button class="tile" data-idx="11" style="--accent:#1e5fa8">
+        <span class="chip">CRC</span>
+        <h3 class="pos">Recreation Specialist (TR-Day Camps)</h3>
+        <div class="pay">$27,726.40 – $31,824 / yr</div>
+        <div class="meta">Seasonal</div>
+      </button>
+      <button class="tile" data-idx="12" style="--accent:#1e5fa8">
+        <span class="chip">CRC</span>
+        <h3 class="pos">Recreation Specialist (TR-Inclusion)</h3>
+        <div class="pay">$27,726.40 – $31,824 / yr</div>
+        <div class="meta">Seasonal</div>
+      </button>
+      <button class="tile" data-idx="13" style="--accent:#1e5fa8">
+        <span class="chip">CRC</span>
+        <h3 class="pos">Recreation Specialist Center Staff (Bush, Leblond, Lincoln, Price Hill)</h3>
+        <div class="pay">$27,726.40 – $31,824 / yr</div>
+        <div class="meta">Seasonal</div>
+      </button>
+      <button class="tile" data-idx="14" style="--accent:#1e5fa8">
+        <span class="chip">CRC</span>
+        <h3 class="pos">Recreation Specialist Center Staff (Dunham, Evanston, Hirsch, McKie, Pleasant Ridge)</h3>
+        <div class="pay">$27,726.40 – $31,824 / yr</div>
+        <div class="meta">Seasonal</div>
+      </button>
+      <button class="tile" data-idx="15" style="--accent:#1e5fa8">
+        <span class="chip">CRC</span>
+        <h3 class="pos">Recreation Specialist (Clifton, College Hill, Millvale, Avondale, Sayler Park, Westwood, Winton, Athletic)</h3>
+        <div class="pay">$27,726.40 – $31,824 / yr</div>
+        <div class="meta">Seasonal</div>
+      </button>
+      <button class="tile" data-idx="16" style="--accent:#0f7a5a">
+        <span class="chip">Cincinnati Parks</span>
+        <h3 class="pos">Engineering Technician Supervisor (Non-Competitive)</h3>
+        <div class="pay">$77,742.40 – $104,479.29 / yr</div>
+        <div class="meta">Full-time</div>
+      </button>
+      <button class="tile" data-idx="17" style="--accent:#0f7a5a">
+        <span class="chip">Cincinnati Parks</span>
+        <h3 class="pos">Municipal Worker (Parks)</h3>
+        <div class="pay">$17.55 / hr</div>
+        <div class="meta">Part-time</div>
+      </button>
+      <button class="tile" data-idx="18" style="--accent:#0f7a5a">
+        <span class="chip">Cincinnati Parks</span>
+        <h3 class="pos">Parks/Recreation Specialist – Customer Service/Cashier</h3>
+        <div class="pay">$13.33 – $15.30 / hr</div>
+        <div class="meta">Part-time</div>
+      </button>
+      <button class="tile" data-idx="19" style="--accent:#0f7a5a">
+        <span class="chip">Cincinnati Parks</span>
+        <h3 class="pos">Parks/Recreation Specialist – Events/Parking/Audio</h3>
+        <div class="pay">$13.33 – $15.30 / hr</div>
+        <div class="meta">Part-time</div>
+      </button>
+      <button class="tile" data-idx="20" style="--accent:#0f7a5a">
+        <span class="chip">Cincinnati Parks</span>
+        <h3 class="pos">Parks/Recreation Specialist – Horticulture/Natural Resources</h3>
+        <div class="pay">$27,726.40 – $31,824 / yr</div>
+        <div class="meta">Part-time</div>
+      </button>
+      <button class="tile" data-idx="21" style="--accent:#0f7a5a">
+        <span class="chip">Cincinnati Parks</span>
+        <h3 class="pos">Parks/Recreation Specialist – Summer Camp Counselor / Naturalist / Volunteer Coordinator</h3>
+        <div class="pay">$13.33 – $15.30 / hr</div>
+        <div class="meta">Part-time</div>
+      </button>
+      <button class="tile" data-idx="22" style="--accent:#2d6a4f">
+        <span class="chip">Great Parks</span>
+        <h3 class="pos">Park Engineer</h3>
+        <div class="pay">$86,296 – $107,871 / yr</div>
+        <div class="meta">Full-time</div>
+      </button>
+      <button class="tile" data-idx="23" style="--accent:#2d6a4f">
+        <span class="chip">Great Parks</span>
+        <h3 class="pos">Administrative Specialist</h3>
+        <div class="pay">$25.34 – $31.67 / hr</div>
+        <div class="meta">Full-time</div>
+      </button>
+      <button class="tile" data-idx="24" style="--accent:#2d6a4f">
+        <span class="chip">Great Parks</span>
+        <h3 class="pos">Conservation &amp; Parks Technician – FT (Harrison)</h3>
+        <div class="pay">$19.02 – $23.78 / hr</div>
+        <div class="meta">Full-time</div>
+      </button>
+      <button class="tile" data-idx="25" style="--accent:#2d6a4f">
+        <span class="chip">Great Parks</span>
+        <h3 class="pos">Conservation &amp; Parks Technician – PT (Mitchell Memorial Forest, Cleves)</h3>
+        <div class="pay">$15.16 / hr</div>
+        <div class="meta">Part-time</div>
+      </button>
+      <button class="tile" data-idx="26" style="--accent:#2d6a4f">
+        <span class="chip">Great Parks</span>
+        <h3 class="pos">Conservation &amp; Parks Technician – PT (Colerain)</h3>
+        <div class="pay">$15.16 / hr</div>
+        <div class="meta">Part-time</div>
+      </button>
+      <button class="tile" data-idx="27" style="--accent:#2d6a4f">
+        <span class="chip">Great Parks</span>
+        <h3 class="pos">Conservation &amp; Parks Technician – PT (Newtown)</h3>
+        <div class="pay">$15.16 / hr</div>
+        <div class="meta">Part-time</div>
+      </button>
+      <button class="tile" data-idx="28" style="--accent:#2d6a4f">
+        <span class="chip">Great Parks</span>
+        <h3 class="pos">Conservation &amp; Parks Technician – PT (Glenwood Gardens, Woodlawn)</h3>
+        <div class="pay">$15.16 / hr</div>
+        <div class="meta">Part-time</div>
+      </button>
+      <button class="tile" data-idx="29" style="--accent:#2d6a4f">
+        <span class="chip">Great Parks</span>
+        <h3 class="pos">Communications Intern – PT (Cincinnati)</h3>
+        <div class="pay">$20.00 / hr</div>
+        <div class="meta">Intern / Part-time</div>
+      </button>
+      <button class="tile" data-idx="30" style="--accent:#2d6a4f">
+        <span class="chip">Great Parks</span>
+        <h3 class="pos">Education Intern (Cincinnati)</h3>
+        <div class="pay">$15.00 / hr</div>
+        <div class="meta">Intern / Part-time</div>
+      </button>
+      <button class="tile" data-idx="31" style="--accent:#2d6a4f">
+        <span class="chip">Great Parks</span>
+        <h3 class="pos">Outdoor Educator / Day Camp Counselor</h3>
+        <div class="pay">$16.68 / hr</div>
+        <div class="meta">Part-time</div>
+      </button>
+      <button class="tile" data-idx="32" style="--accent:#2d6a4f">
+        <span class="chip">Great Parks</span>
+        <h3 class="pos">Assistant Guest Experiences Manager I (Loveland)</h3>
+        <div class="pay">$16.68 / hr</div>
+        <div class="meta">Part-time</div>
+      </button>
+      <button class="tile" data-idx="33" style="--accent:#2d6a4f">
+        <span class="chip">Great Parks</span>
+        <h3 class="pos">Assistant Guest Experiences Manager I (Cincinnati)</h3>
+        <div class="pay">$16.68 / hr</div>
+        <div class="meta">Part-time</div>
+      </button>
+      <button class="tile" data-idx="34" style="--accent:#2d6a4f">
+        <span class="chip">Great Parks</span>
+        <h3 class="pos">Assistant Guest Experiences Manager II (Cincinnati)</h3>
+        <div class="pay">$18.35 / hr</div>
+        <div class="meta">Part-time</div>
+      </button>
+      <button class="tile" data-idx="35" style="--accent:#2d6a4f">
+        <span class="chip">Great Parks</span>
+        <h3 class="pos">Guest Experiences Attendant III (Harrison)</h3>
+        <div class="pay">$13.80 / hr</div>
+        <div class="meta">Part-time</div>
+      </button>
+      <button class="tile" data-idx="36" style="--accent:#2d6a4f">
+        <span class="chip">Great Parks</span>
+        <h3 class="pos">Guest Experiences Attendant III (Little Miami Golf Center, Newtown)</h3>
+        <div class="pay">$13.80 / hr</div>
+        <div class="meta">Part-time</div>
+      </button>
+      <button class="tile" data-idx="37" style="--accent:#2d6a4f">
+        <span class="chip">Great Parks</span>
+        <h3 class="pos">Guest Experiences Attendant II (Newtown)</h3>
+        <div class="pay">$13.00 / hr</div>
+        <div class="meta">Part-time</div>
+      </button>
+      <button class="tile" data-idx="38" style="--accent:#2d6a4f">
+        <span class="chip">Great Parks</span>
+        <h3 class="pos">Shift Leader (Cincinnati)</h3>
+        <div class="pay">$15.16 / hr</div>
+        <div class="meta">Part-time</div>
+      </button>
+      <button class="tile" data-idx="39" style="--accent:#2d6a4f">
+        <span class="chip">Great Parks</span>
+        <h3 class="pos">Golf Maintenance Technician – PT (Anderson Township)</h3>
+        <div class="pay">$15.16 / hr</div>
+        <div class="meta">Part-time</div>
+      </button>
+      <button class="tile" data-idx="40" style="--accent:#6b3fa0">
+        <span class="chip">Anderson Parks</span>
+        <h3 class="pos">Operations Staff IV (parks / maintenance / custodial)</h3>
+        <div class="pay">$19.00 / hr</div>
+        <div class="meta">Part-time (Non-Exempt)</div>
+      </button>
+      <button class="tile" data-idx="41" style="--accent:#6b3fa0">
+        <span class="chip">Anderson Parks</span>
+        <h3 class="pos">Operations Staff I (landscaping / park maintenance)</h3>
+        <div class="pay">$14.25 / hr</div>
+        <div class="meta">Part-time (Non-Exempt)</div>
+      </button>
+      <button class="tile" data-idx="42" style="--accent:#6b3fa0">
+        <span class="chip">Anderson Parks</span>
+        <h3 class="pos">Recreation Staff I (Summer Day Camp Counselor)</h3>
+        <div class="pay">$14.25 / hr</div>
+        <div class="meta">Seasonal / Part-time (Non-Exempt)</div>
+      </button>
+      <button class="tile" data-idx="43" style="--accent:#b9731d">
+        <span class="chip">Delhi Twp</span>
+        <h3 class="pos">Park Maintenance Worker</h3>
+        <div class="pay">not listed</div>
+        <div class="meta">Full-time</div>
+      </button>
+      <button class="tile" data-idx="44" style="--accent:#b9731d">
+        <span class="chip">Delhi Twp</span>
+        <h3 class="pos">Seasonal Parks &amp; Recreation Worker</h3>
+        <div class="pay">not listed</div>
+        <div class="meta">Part-time / Seasonal</div>
+      </button>
+      <button class="tile" data-idx="45" style="--accent:#a03065">
+        <span class="chip">Indian Hill</span>
+        <h3 class="pos">Part-time Grand Valley Preserve Worker</h3>
+        <div class="pay">not listed</div>
+        <div class="meta">Part-time</div>
+      </button>
+      <button class="tile" data-idx="46" style="--accent:#0d7490">
+        <span class="chip">Mill Creek</span>
+        <h3 class="pos">Environmental Education Programs Intern (Seeds of Change)</h3>
+        <div class="pay">Grant-funded (amount not published)</div>
+        <div class="meta">Seasonal / Intern</div>
+      </button>
+      <button class="tile" data-idx="47" style="--accent:#0d7490">
+        <span class="chip">Mill Creek</span>
+        <h3 class="pos">Blue Team Intern / Lab Leader</h3>
+        <div class="pay">not listed</div>
+        <div class="meta">1-year position</div>
+      </button>
+      <button class="tile" data-idx="48" style="--accent:#6b7a1a">
+        <span class="chip">Green Twp</span>
+        <h3 class="pos">Summer Help 2026 (parks/maintenance — image-only posting)</h3>
+        <div class="pay">not listed</div>
+        <div class="meta">Seasonal</div>
+      </button>
+    </main>
+
+    <footer>
+      <p>Each listing was verified against its source portal on April 20, 2026. Applications live outside this page and may change or be filled without notice — always confirm details on the employer's site.</p>
+      <p>Two postings in this list (Mill Creek Blue Team; Green Township Summer Help) require a phone call or email rather than a web application.</p>
+    </footer>
+  </div>
+
+      <div class="modal" id="m0" role="dialog" aria-modal="true" aria-labelledby="m0-title" hidden>
+        <div class="modal-backdrop" data-close></div>
+        <div class="modal-card" style="--accent:#1e5fa8">
+          <button class="modal-close" data-close aria-label="Close">&times;</button>
+          <span class="chip">CRC</span>
+          <h2 id="m0-title" class="modal-pos">Municipal Worker (Recreation-Center Staff)</h2>
+          <dl class="details">
+            <div><dt>Pay</dt><dd class="big">$36,504 / yr</dd></div>
+            <div><dt>Type</dt><dd>Part-time</dd></div>
+            <div><dt>Deadline</dt><dd>Continuous</dd></div>
+            <div><dt>Notes</dt><dd>Verified on governmentjobs.com</dd></div>
+            <div><dt>Employer</dt><dd>Cincinnati Recreation Commission (CRC)</dd></div>
+          </dl>
+          <a class="apply" href="https://www.governmentjobs.com/careers/cincinnati/jobs/5197856/municipal-worker-recreation-center-staff" target="_blank" rel="noopener noreferrer">Open application &nearr;</a>
+        </div>
+      </div>
+      <div class="modal" id="m1" role="dialog" aria-modal="true" aria-labelledby="m1-title" hidden>
+        <div class="modal-backdrop" data-close></div>
+        <div class="modal-card" style="--accent:#1e5fa8">
+          <button class="modal-close" data-close aria-label="Close">&times;</button>
+          <span class="chip">CRC</span>
+          <h2 id="m1-title" class="modal-pos">Municipal Worker (Recreation-Outdoor Maintenance)</h2>
+          <dl class="details">
+            <div><dt>Pay</dt><dd class="big">$38,313.60 / yr</dd></div>
+            <div><dt>Type</dt><dd>Part-time</dd></div>
+            <div><dt>Deadline</dt><dd>Continuous</dd></div>
+            <div><dt>Notes</dt><dd>Verified on governmentjobs.com</dd></div>
+            <div><dt>Employer</dt><dd>Cincinnati Recreation Commission (CRC)</dd></div>
+          </dl>
+          <a class="apply" href="https://www.governmentjobs.com/careers/cincinnati/jobs/5197768/municipal-worker-recreation-outdoor-maintenance" target="_blank" rel="noopener noreferrer">Open application &nearr;</a>
+        </div>
+      </div>
+      <div class="modal" id="m2" role="dialog" aria-modal="true" aria-labelledby="m2-title" hidden>
+        <div class="modal-backdrop" data-close></div>
+        <div class="modal-card" style="--accent:#1e5fa8">
+          <button class="modal-close" data-close aria-label="Close">&times;</button>
+          <span class="chip">CRC</span>
+          <h2 id="m2-title" class="modal-pos">Aquatics Specialist</h2>
+          <dl class="details">
+            <div><dt>Pay</dt><dd class="big">$13.33 – $15.30 / hr</dd></div>
+            <div><dt>Type</dt><dd>Seasonal</dd></div>
+            <div><dt>Deadline</dt><dd>Continuous</dd></div>
+            <div><dt>Notes</dt><dd>Verified</dd></div>
+            <div><dt>Employer</dt><dd>Cincinnati Recreation Commission (CRC)</dd></div>
+          </dl>
+          <a class="apply" href="https://www.governmentjobs.com/careers/cincinnati/jobs/5193928/aquatics-specialist" target="_blank" rel="noopener noreferrer">Open application &nearr;</a>
+        </div>
+      </div>
+      <div class="modal" id="m3" role="dialog" aria-modal="true" aria-labelledby="m3-title" hidden>
+        <div class="modal-backdrop" data-close></div>
+        <div class="modal-card" style="--accent:#1e5fa8">
+          <button class="modal-close" data-close aria-label="Close">&times;</button>
+          <span class="chip">CRC</span>
+          <h2 id="m3-title" class="modal-pos">Head Guard</h2>
+          <dl class="details">
+            <div><dt>Pay</dt><dd class="big">$19.00 / hr</dd></div>
+            <div><dt>Type</dt><dd>Seasonal</dd></div>
+            <div><dt>Deadline</dt><dd>~3 months</dd></div>
+            <div><dt>Notes</dt><dd>Verified</dd></div>
+            <div><dt>Employer</dt><dd>Cincinnati Recreation Commission (CRC)</dd></div>
+          </dl>
+          <a class="apply" href="https://www.governmentjobs.com/careers/cincinnati/jobs/5192858/head-guard" target="_blank" rel="noopener noreferrer">Open application &nearr;</a>
+        </div>
+      </div>
+      <div class="modal" id="m4" role="dialog" aria-modal="true" aria-labelledby="m4-title" hidden>
+        <div class="modal-backdrop" data-close></div>
+        <div class="modal-card" style="--accent:#1e5fa8">
+          <button class="modal-close" data-close aria-label="Close">&times;</button>
+          <span class="chip">CRC</span>
+          <h2 id="m4-title" class="modal-pos">Lifeguard</h2>
+          <dl class="details">
+            <div><dt>Pay</dt><dd class="big">$16.00 – $18.00 / hr</dd></div>
+            <div><dt>Type</dt><dd>Seasonal</dd></div>
+            <div><dt>Deadline</dt><dd>~3 months</dd></div>
+            <div><dt>Notes</dt><dd>Verified</dd></div>
+            <div><dt>Employer</dt><dd>Cincinnati Recreation Commission (CRC)</dd></div>
+          </dl>
+          <a class="apply" href="https://www.governmentjobs.com/careers/cincinnati/jobs/5192977/lifeguard" target="_blank" rel="noopener noreferrer">Open application &nearr;</a>
+        </div>
+      </div>
+      <div class="modal" id="m5" role="dialog" aria-modal="true" aria-labelledby="m5-title" hidden>
+        <div class="modal-backdrop" data-close></div>
+        <div class="modal-card" style="--accent:#1e5fa8">
+          <button class="modal-close" data-close aria-label="Close">&times;</button>
+          <span class="chip">CRC</span>
+          <h2 id="m5-title" class="modal-pos">Pool Manager</h2>
+          <dl class="details">
+            <div><dt>Pay</dt><dd class="big">$22.00 / hr</dd></div>
+            <div><dt>Type</dt><dd>Seasonal</dd></div>
+            <div><dt>Deadline</dt><dd>not listed</dd></div>
+            <div><dt>Notes</dt><dd>Verified</dd></div>
+            <div><dt>Employer</dt><dd>Cincinnati Recreation Commission (CRC)</dd></div>
+          </dl>
+          <a class="apply" href="https://www.governmentjobs.com/careers/cincinnati/jobs/5194056/pool-manager" target="_blank" rel="noopener noreferrer">Open application &nearr;</a>
+        </div>
+      </div>
+      <div class="modal" id="m6" role="dialog" aria-modal="true" aria-labelledby="m6-title" hidden>
+        <div class="modal-backdrop" data-close></div>
+        <div class="modal-card" style="--accent:#1e5fa8">
+          <button class="modal-close" data-close aria-label="Close">&times;</button>
+          <span class="chip">CRC</span>
+          <h2 id="m6-title" class="modal-pos">Pool Monitor</h2>
+          <dl class="details">
+            <div><dt>Pay</dt><dd class="big">$16.00 / hr</dd></div>
+            <div><dt>Type</dt><dd>Seasonal</dd></div>
+            <div><dt>Deadline</dt><dd>~2 months</dd></div>
+            <div><dt>Notes</dt><dd>Verified</dd></div>
+            <div><dt>Employer</dt><dd>Cincinnati Recreation Commission (CRC)</dd></div>
+          </dl>
+          <a class="apply" href="https://www.governmentjobs.com/careers/cincinnati/jobs/5193242/pool-monitor" target="_blank" rel="noopener noreferrer">Open application &nearr;</a>
+        </div>
+      </div>
+      <div class="modal" id="m7" role="dialog" aria-modal="true" aria-labelledby="m7-title" hidden>
+        <div class="modal-backdrop" data-close></div>
+        <div class="modal-card" style="--accent:#1e5fa8">
+          <button class="modal-close" data-close aria-label="Close">&times;</button>
+          <span class="chip">CRC</span>
+          <h2 id="m7-title" class="modal-pos">Recreation Program Leader (Y2WK Community Partner, ages 14-24)</h2>
+          <dl class="details">
+            <div><dt>Pay</dt><dd class="big">$27,726.40 / yr</dd></div>
+            <div><dt>Type</dt><dd>Seasonal</dd></div>
+            <div><dt>Deadline</dt><dd>~1 month</dd></div>
+            <div><dt>Notes</dt><dd>Verified</dd></div>
+            <div><dt>Employer</dt><dd>Cincinnati Recreation Commission (CRC)</dd></div>
+          </dl>
+          <a class="apply" href="https://www.governmentjobs.com/careers/cincinnati/jobs/5191992/recreation-program-leader-y2wk-community-partner-14-24-yrs" target="_blank" rel="noopener noreferrer">Open application &nearr;</a>
+        </div>
+      </div>
+      <div class="modal" id="m8" role="dialog" aria-modal="true" aria-labelledby="m8-title" hidden>
+        <div class="modal-backdrop" data-close></div>
+        <div class="modal-card" style="--accent:#1e5fa8">
+          <button class="modal-close" data-close aria-label="Close">&times;</button>
+          <span class="chip">CRC</span>
+          <h2 id="m8-title" class="modal-pos">Recreation Specialist (Main Office)</h2>
+          <dl class="details">
+            <div><dt>Pay</dt><dd class="big">$27,726.40 – $31,824 / yr</dd></div>
+            <div><dt>Type</dt><dd>Seasonal</dd></div>
+            <div><dt>Deadline</dt><dd>Continuous</dd></div>
+            <div><dt>Notes</dt><dd>Verified</dd></div>
+            <div><dt>Employer</dt><dd>Cincinnati Recreation Commission (CRC)</dd></div>
+          </dl>
+          <a class="apply" href="https://www.governmentjobs.com/careers/cincinnati/jobs/5191776/recreation-speciailist-main-office" target="_blank" rel="noopener noreferrer">Open application &nearr;</a>
+        </div>
+      </div>
+      <div class="modal" id="m9" role="dialog" aria-modal="true" aria-labelledby="m9-title" hidden>
+        <div class="modal-backdrop" data-close></div>
+        <div class="modal-card" style="--accent:#1e5fa8">
+          <button class="modal-close" data-close aria-label="Close">&times;</button>
+          <span class="chip">CRC</span>
+          <h2 id="m9-title" class="modal-pos">Recreation Specialist (Bond Hill, Corryville, Hartwell, Madisonville, Mt. Washington, Eastside)</h2>
+          <dl class="details">
+            <div><dt>Pay</dt><dd class="big">$27,726.40 – $31,824 / yr</dd></div>
+            <div><dt>Type</dt><dd>Seasonal</dd></div>
+            <div><dt>Deadline</dt><dd>Continuous</dd></div>
+            <div><dt>Notes</dt><dd>Verified</dd></div>
+            <div><dt>Employer</dt><dd>Cincinnati Recreation Commission (CRC)</dd></div>
+          </dl>
+          <a class="apply" href="https://www.governmentjobs.com/careers/cincinnati/jobs/5191841/recreation-specialist-bond-hill-corryville-hartwell-madisonville-mt-washing" target="_blank" rel="noopener noreferrer">Open application &nearr;</a>
+        </div>
+      </div>
+      <div class="modal" id="m10" role="dialog" aria-modal="true" aria-labelledby="m10-title" hidden>
+        <div class="modal-backdrop" data-close></div>
+        <div class="modal-card" style="--accent:#1e5fa8">
+          <button class="modal-close" data-close aria-label="Close">&times;</button>
+          <span class="chip">CRC</span>
+          <h2 id="m10-title" class="modal-pos">Recreation Specialist (Rec@Nite Special Events)</h2>
+          <dl class="details">
+            <div><dt>Pay</dt><dd class="big">$27,726.40 – $31,824 / yr</dd></div>
+            <div><dt>Type</dt><dd>Seasonal</dd></div>
+            <div><dt>Deadline</dt><dd>Continuous</dd></div>
+            <div><dt>Notes</dt><dd>Verified</dd></div>
+            <div><dt>Employer</dt><dd>Cincinnati Recreation Commission (CRC)</dd></div>
+          </dl>
+          <a class="apply" href="https://www.governmentjobs.com/careers/cincinnati/jobs/5201493/recreation-specialist-recnite-special-events" target="_blank" rel="noopener noreferrer">Open application &nearr;</a>
+        </div>
+      </div>
+      <div class="modal" id="m11" role="dialog" aria-modal="true" aria-labelledby="m11-title" hidden>
+        <div class="modal-backdrop" data-close></div>
+        <div class="modal-card" style="--accent:#1e5fa8">
+          <button class="modal-close" data-close aria-label="Close">&times;</button>
+          <span class="chip">CRC</span>
+          <h2 id="m11-title" class="modal-pos">Recreation Specialist (TR-Day Camps)</h2>
+          <dl class="details">
+            <div><dt>Pay</dt><dd class="big">$27,726.40 – $31,824 / yr</dd></div>
+            <div><dt>Type</dt><dd>Seasonal</dd></div>
+            <div><dt>Deadline</dt><dd>Continuous</dd></div>
+            <div><dt>Notes</dt><dd>Verified</dd></div>
+            <div><dt>Employer</dt><dd>Cincinnati Recreation Commission (CRC)</dd></div>
+          </dl>
+          <a class="apply" href="https://www.governmentjobs.com/careers/cincinnati/jobs/5191706/recreation-specialist-tr-day-camps" target="_blank" rel="noopener noreferrer">Open application &nearr;</a>
+        </div>
+      </div>
+      <div class="modal" id="m12" role="dialog" aria-modal="true" aria-labelledby="m12-title" hidden>
+        <div class="modal-backdrop" data-close></div>
+        <div class="modal-card" style="--accent:#1e5fa8">
+          <button class="modal-close" data-close aria-label="Close">&times;</button>
+          <span class="chip">CRC</span>
+          <h2 id="m12-title" class="modal-pos">Recreation Specialist (TR-Inclusion)</h2>
+          <dl class="details">
+            <div><dt>Pay</dt><dd class="big">$27,726.40 – $31,824 / yr</dd></div>
+            <div><dt>Type</dt><dd>Seasonal</dd></div>
+            <div><dt>Deadline</dt><dd>~6 months</dd></div>
+            <div><dt>Notes</dt><dd>Verified</dd></div>
+            <div><dt>Employer</dt><dd>Cincinnati Recreation Commission (CRC)</dd></div>
+          </dl>
+          <a class="apply" href="https://www.governmentjobs.com/careers/cincinnati/jobs/5201368/recreation-specialist-tr-inclusion" target="_blank" rel="noopener noreferrer">Open application &nearr;</a>
+        </div>
+      </div>
+      <div class="modal" id="m13" role="dialog" aria-modal="true" aria-labelledby="m13-title" hidden>
+        <div class="modal-backdrop" data-close></div>
+        <div class="modal-card" style="--accent:#1e5fa8">
+          <button class="modal-close" data-close aria-label="Close">&times;</button>
+          <span class="chip">CRC</span>
+          <h2 id="m13-title" class="modal-pos">Recreation Specialist Center Staff (Bush, Leblond, Lincoln, Price Hill)</h2>
+          <dl class="details">
+            <div><dt>Pay</dt><dd class="big">$27,726.40 – $31,824 / yr</dd></div>
+            <div><dt>Type</dt><dd>Seasonal</dd></div>
+            <div><dt>Deadline</dt><dd>Continuous</dd></div>
+            <div><dt>Notes</dt><dd>Verified</dd></div>
+            <div><dt>Employer</dt><dd>Cincinnati Recreation Commission (CRC)</dd></div>
+          </dl>
+          <a class="apply" href="https://www.governmentjobs.com/careers/cincinnati/jobs/5193688/recreation-specialist-center-staff-bush-leblond-lincoln-price-hill" target="_blank" rel="noopener noreferrer">Open application &nearr;</a>
+        </div>
+      </div>
+      <div class="modal" id="m14" role="dialog" aria-modal="true" aria-labelledby="m14-title" hidden>
+        <div class="modal-backdrop" data-close></div>
+        <div class="modal-card" style="--accent:#1e5fa8">
+          <button class="modal-close" data-close aria-label="Close">&times;</button>
+          <span class="chip">CRC</span>
+          <h2 id="m14-title" class="modal-pos">Recreation Specialist Center Staff (Dunham, Evanston, Hirsch, McKie, Pleasant Ridge)</h2>
+          <dl class="details">
+            <div><dt>Pay</dt><dd class="big">$27,726.40 – $31,824 / yr</dd></div>
+            <div><dt>Type</dt><dd>Seasonal</dd></div>
+            <div><dt>Deadline</dt><dd>Continuous</dd></div>
+            <div><dt>Notes</dt><dd>Verified</dd></div>
+            <div><dt>Employer</dt><dd>Cincinnati Recreation Commission (CRC)</dd></div>
+          </dl>
+          <a class="apply" href="https://www.governmentjobs.com/careers/cincinnati/jobs/5193037/recreation-specialist-center-staff-dunham-evanston-hirsch-mckie-pleasant-rid" target="_blank" rel="noopener noreferrer">Open application &nearr;</a>
+        </div>
+      </div>
+      <div class="modal" id="m15" role="dialog" aria-modal="true" aria-labelledby="m15-title" hidden>
+        <div class="modal-backdrop" data-close></div>
+        <div class="modal-card" style="--accent:#1e5fa8">
+          <button class="modal-close" data-close aria-label="Close">&times;</button>
+          <span class="chip">CRC</span>
+          <h2 id="m15-title" class="modal-pos">Recreation Specialist (Clifton, College Hill, Millvale, Avondale, Sayler Park, Westwood, Winton, Athletic)</h2>
+          <dl class="details">
+            <div><dt>Pay</dt><dd class="big">$27,726.40 – $31,824 / yr</dd></div>
+            <div><dt>Type</dt><dd>Seasonal</dd></div>
+            <div><dt>Deadline</dt><dd>Continuous</dd></div>
+            <div><dt>Notes</dt><dd>Verified</dd></div>
+            <div><dt>Employer</dt><dd>Cincinnati Recreation Commission (CRC)</dd></div>
+          </dl>
+          <a class="apply" href="https://www.governmentjobs.com/careers/cincinnati/jobs/5193776/recreation-specialist-clifton-college-hill-millvale-avondale-sayler-park-wwt" target="_blank" rel="noopener noreferrer">Open application &nearr;</a>
+        </div>
+      </div>
+      <div class="modal" id="m16" role="dialog" aria-modal="true" aria-labelledby="m16-title" hidden>
+        <div class="modal-backdrop" data-close></div>
+        <div class="modal-card" style="--accent:#0f7a5a">
+          <button class="modal-close" data-close aria-label="Close">&times;</button>
+          <span class="chip">Cincinnati Parks</span>
+          <h2 id="m16-title" class="modal-pos">Engineering Technician Supervisor (Non-Competitive)</h2>
+          <dl class="details">
+            <div><dt>Pay</dt><dd class="big">$77,742.40 – $104,479.29 / yr</dd></div>
+            <div><dt>Type</dt><dd>Full-time</dd></div>
+            <div><dt>Deadline</dt><dd>~4 days</dd></div>
+            <div><dt>Notes</dt><dd>Verified. Only FT posting right now.</dd></div>
+            <div><dt>Employer</dt><dd>Cincinnati Park Board</dd></div>
+          </dl>
+          <a class="apply" href="https://www.governmentjobs.com/careers/cincinnati/jobs/5298788/engineering-technician-supervisornon-competitive" target="_blank" rel="noopener noreferrer">Open application &nearr;</a>
+        </div>
+      </div>
+      <div class="modal" id="m17" role="dialog" aria-modal="true" aria-labelledby="m17-title" hidden>
+        <div class="modal-backdrop" data-close></div>
+        <div class="modal-card" style="--accent:#0f7a5a">
+          <button class="modal-close" data-close aria-label="Close">&times;</button>
+          <span class="chip">Cincinnati Parks</span>
+          <h2 id="m17-title" class="modal-pos">Municipal Worker (Parks)</h2>
+          <dl class="details">
+            <div><dt>Pay</dt><dd class="big">$17.55 / hr</dd></div>
+            <div><dt>Type</dt><dd>Part-time</dd></div>
+            <div><dt>Deadline</dt><dd>~4 months</dd></div>
+            <div><dt>Notes</dt><dd>Verified</dd></div>
+            <div><dt>Employer</dt><dd>Cincinnati Park Board</dd></div>
+          </dl>
+          <a class="apply" href="https://www.governmentjobs.com/careers/cincinnati/jobs/5204138/municipal-worker-parks" target="_blank" rel="noopener noreferrer">Open application &nearr;</a>
+        </div>
+      </div>
+      <div class="modal" id="m18" role="dialog" aria-modal="true" aria-labelledby="m18-title" hidden>
+        <div class="modal-backdrop" data-close></div>
+        <div class="modal-card" style="--accent:#0f7a5a">
+          <button class="modal-close" data-close aria-label="Close">&times;</button>
+          <span class="chip">Cincinnati Parks</span>
+          <h2 id="m18-title" class="modal-pos">Parks/Recreation Specialist – Customer Service/Cashier</h2>
+          <dl class="details">
+            <div><dt>Pay</dt><dd class="big">$13.33 – $15.30 / hr</dd></div>
+            <div><dt>Type</dt><dd>Part-time</dd></div>
+            <div><dt>Deadline</dt><dd>~4 months</dd></div>
+            <div><dt>Notes</dt><dd>Verified</dd></div>
+            <div><dt>Employer</dt><dd>Cincinnati Park Board</dd></div>
+          </dl>
+          <a class="apply" href="https://www.governmentjobs.com/careers/cincinnati/jobs/5204043/parks-recreation-specialist-customer-service-cashier" target="_blank" rel="noopener noreferrer">Open application &nearr;</a>
+        </div>
+      </div>
+      <div class="modal" id="m19" role="dialog" aria-modal="true" aria-labelledby="m19-title" hidden>
+        <div class="modal-backdrop" data-close></div>
+        <div class="modal-card" style="--accent:#0f7a5a">
+          <button class="modal-close" data-close aria-label="Close">&times;</button>
+          <span class="chip">Cincinnati Parks</span>
+          <h2 id="m19-title" class="modal-pos">Parks/Recreation Specialist – Events/Parking/Audio</h2>
+          <dl class="details">
+            <div><dt>Pay</dt><dd class="big">$13.33 – $15.30 / hr</dd></div>
+            <div><dt>Type</dt><dd>Part-time</dd></div>
+            <div><dt>Deadline</dt><dd>~4 months</dd></div>
+            <div><dt>Notes</dt><dd>Verified</dd></div>
+            <div><dt>Employer</dt><dd>Cincinnati Park Board</dd></div>
+          </dl>
+          <a class="apply" href="https://www.governmentjobs.com/careers/cincinnati/jobs/5204089/parks-recreation-specialist-events-parking-audio" target="_blank" rel="noopener noreferrer">Open application &nearr;</a>
+        </div>
+      </div>
+      <div class="modal" id="m20" role="dialog" aria-modal="true" aria-labelledby="m20-title" hidden>
+        <div class="modal-backdrop" data-close></div>
+        <div class="modal-card" style="--accent:#0f7a5a">
+          <button class="modal-close" data-close aria-label="Close">&times;</button>
+          <span class="chip">Cincinnati Parks</span>
+          <h2 id="m20-title" class="modal-pos">Parks/Recreation Specialist – Horticulture/Natural Resources</h2>
+          <dl class="details">
+            <div><dt>Pay</dt><dd class="big">$27,726.40 – $31,824 / yr</dd></div>
+            <div><dt>Type</dt><dd>Part-time</dd></div>
+            <div><dt>Deadline</dt><dd>~4 months</dd></div>
+            <div><dt>Notes</dt><dd>Verified</dd></div>
+            <div><dt>Employer</dt><dd>Cincinnati Park Board</dd></div>
+          </dl>
+          <a class="apply" href="https://www.governmentjobs.com/careers/cincinnati/jobs/5194903/parks-recreation-specialist-horticulture-natural-resources" target="_blank" rel="noopener noreferrer">Open application &nearr;</a>
+        </div>
+      </div>
+      <div class="modal" id="m21" role="dialog" aria-modal="true" aria-labelledby="m21-title" hidden>
+        <div class="modal-backdrop" data-close></div>
+        <div class="modal-card" style="--accent:#0f7a5a">
+          <button class="modal-close" data-close aria-label="Close">&times;</button>
+          <span class="chip">Cincinnati Parks</span>
+          <h2 id="m21-title" class="modal-pos">Parks/Recreation Specialist – Summer Camp Counselor / Naturalist / Volunteer Coordinator</h2>
+          <dl class="details">
+            <div><dt>Pay</dt><dd class="big">$13.33 – $15.30 / hr</dd></div>
+            <div><dt>Type</dt><dd>Part-time</dd></div>
+            <div><dt>Deadline</dt><dd>~4 months</dd></div>
+            <div><dt>Notes</dt><dd>Verified</dd></div>
+            <div><dt>Employer</dt><dd>Cincinnati Park Board</dd></div>
+          </dl>
+          <a class="apply" href="https://www.governmentjobs.com/careers/cincinnati/jobs/5203424/parks-recreation-specialist-summer-camp-counselor-naturalist-volunteer-coordina" target="_blank" rel="noopener noreferrer">Open application &nearr;</a>
+        </div>
+      </div>
+      <div class="modal" id="m22" role="dialog" aria-modal="true" aria-labelledby="m22-title" hidden>
+        <div class="modal-backdrop" data-close></div>
+        <div class="modal-card" style="--accent:#2d6a4f">
+          <button class="modal-close" data-close aria-label="Close">&times;</button>
+          <span class="chip">Great Parks</span>
+          <h2 id="m22-title" class="modal-pos">Park Engineer</h2>
+          <dl class="details">
+            <div><dt>Pay</dt><dd class="big">$86,296 – $107,871 / yr</dd></div>
+            <div><dt>Type</dt><dd>Full-time</dd></div>
+            <div><dt>Deadline</dt><dd>posted 3 days ago</dd></div>
+            <div><dt>Notes</dt><dd>Verified on ADP portal. Requisition 2504.</dd></div>
+            <div><dt>Employer</dt><dd>Great Parks of Hamilton County</dd></div>
+          </dl>
+          <a class="apply" href="https://workforcenow.adp.com/mascsr/default/mdf/recruitment/recruitment.html?cid=6137da04-9e31-424a-959e-65ee92ddcfe7&amp;jobId=616493" target="_blank" rel="noopener noreferrer">Open application &nearr;</a>
+        </div>
+      </div>
+      <div class="modal" id="m23" role="dialog" aria-modal="true" aria-labelledby="m23-title" hidden>
+        <div class="modal-backdrop" data-close></div>
+        <div class="modal-card" style="--accent:#2d6a4f">
+          <button class="modal-close" data-close aria-label="Close">&times;</button>
+          <span class="chip">Great Parks</span>
+          <h2 id="m23-title" class="modal-pos">Administrative Specialist</h2>
+          <dl class="details">
+            <div><dt>Pay</dt><dd class="big">$25.34 – $31.67 / hr</dd></div>
+            <div><dt>Type</dt><dd>Full-time</dd></div>
+            <div><dt>Deadline</dt><dd>posted 11 days ago</dd></div>
+            <div><dt>Notes</dt><dd>Verified on ADP portal. Requisition 2494.</dd></div>
+            <div><dt>Employer</dt><dd>Great Parks of Hamilton County</dd></div>
+          </dl>
+          <a class="apply" href="https://workforcenow.adp.com/mascsr/default/mdf/recruitment/recruitment.html?cid=6137da04-9e31-424a-959e-65ee92ddcfe7&amp;jobId=615876" target="_blank" rel="noopener noreferrer">Open application &nearr;</a>
+        </div>
+      </div>
+      <div class="modal" id="m24" role="dialog" aria-modal="true" aria-labelledby="m24-title" hidden>
+        <div class="modal-backdrop" data-close></div>
+        <div class="modal-card" style="--accent:#2d6a4f">
+          <button class="modal-close" data-close aria-label="Close">&times;</button>
+          <span class="chip">Great Parks</span>
+          <h2 id="m24-title" class="modal-pos">Conservation &amp; Parks Technician – FT (Harrison)</h2>
+          <dl class="details">
+            <div><dt>Pay</dt><dd class="big">$19.02 – $23.78 / hr</dd></div>
+            <div><dt>Type</dt><dd>Full-time</dd></div>
+            <div><dt>Deadline</dt><dd>posted 10 days ago</dd></div>
+            <div><dt>Notes</dt><dd>Verified on ADP portal.</dd></div>
+            <div><dt>Employer</dt><dd>Great Parks of Hamilton County</dd></div>
+          </dl>
+          <a class="apply" href="https://workforcenow.adp.com/mascsr/default/mdf/recruitment/recruitment.html?cid=6137da04-9e31-424a-959e-65ee92ddcfe7&amp;jobId=615950" target="_blank" rel="noopener noreferrer">Open application &nearr;</a>
+        </div>
+      </div>
+      <div class="modal" id="m25" role="dialog" aria-modal="true" aria-labelledby="m25-title" hidden>
+        <div class="modal-backdrop" data-close></div>
+        <div class="modal-card" style="--accent:#2d6a4f">
+          <button class="modal-close" data-close aria-label="Close">&times;</button>
+          <span class="chip">Great Parks</span>
+          <h2 id="m25-title" class="modal-pos">Conservation &amp; Parks Technician – PT (Mitchell Memorial Forest, Cleves)</h2>
+          <dl class="details">
+            <div><dt>Pay</dt><dd class="big">$15.16 / hr</dd></div>
+            <div><dt>Type</dt><dd>Part-time</dd></div>
+            <div><dt>Deadline</dt><dd>posted today</dd></div>
+            <div><dt>Notes</dt><dd>Verified on ADP portal.</dd></div>
+            <div><dt>Employer</dt><dd>Great Parks of Hamilton County</dd></div>
+          </dl>
+          <a class="apply" href="https://workforcenow.adp.com/mascsr/default/mdf/recruitment/recruitment.html?cid=6137da04-9e31-424a-959e-65ee92ddcfe7&amp;jobId=616655" target="_blank" rel="noopener noreferrer">Open application &nearr;</a>
+        </div>
+      </div>
+      <div class="modal" id="m26" role="dialog" aria-modal="true" aria-labelledby="m26-title" hidden>
+        <div class="modal-backdrop" data-close></div>
+        <div class="modal-card" style="--accent:#2d6a4f">
+          <button class="modal-close" data-close aria-label="Close">&times;</button>
+          <span class="chip">Great Parks</span>
+          <h2 id="m26-title" class="modal-pos">Conservation &amp; Parks Technician – PT (Colerain)</h2>
+          <dl class="details">
+            <div><dt>Pay</dt><dd class="big">$15.16 / hr</dd></div>
+            <div><dt>Type</dt><dd>Part-time</dd></div>
+            <div><dt>Deadline</dt><dd>posted 4 days ago</dd></div>
+            <div><dt>Notes</dt><dd>Verified on ADP portal.</dd></div>
+            <div><dt>Employer</dt><dd>Great Parks of Hamilton County</dd></div>
+          </dl>
+          <a class="apply" href="https://workforcenow.adp.com/mascsr/default/mdf/recruitment/recruitment.html?cid=6137da04-9e31-424a-959e-65ee92ddcfe7&amp;jobId=616429" target="_blank" rel="noopener noreferrer">Open application &nearr;</a>
+        </div>
+      </div>
+      <div class="modal" id="m27" role="dialog" aria-modal="true" aria-labelledby="m27-title" hidden>
+        <div class="modal-backdrop" data-close></div>
+        <div class="modal-card" style="--accent:#2d6a4f">
+          <button class="modal-close" data-close aria-label="Close">&times;</button>
+          <span class="chip">Great Parks</span>
+          <h2 id="m27-title" class="modal-pos">Conservation &amp; Parks Technician – PT (Newtown)</h2>
+          <dl class="details">
+            <div><dt>Pay</dt><dd class="big">$15.16 / hr</dd></div>
+            <div><dt>Type</dt><dd>Part-time</dd></div>
+            <div><dt>Deadline</dt><dd>posted 7 days ago</dd></div>
+            <div><dt>Notes</dt><dd>Verified on ADP portal.</dd></div>
+            <div><dt>Employer</dt><dd>Great Parks of Hamilton County</dd></div>
+          </dl>
+          <a class="apply" href="https://workforcenow.adp.com/mascsr/default/mdf/recruitment/recruitment.html?cid=6137da04-9e31-424a-959e-65ee92ddcfe7&amp;jobId=615833" target="_blank" rel="noopener noreferrer">Open application &nearr;</a>
+        </div>
+      </div>
+      <div class="modal" id="m28" role="dialog" aria-modal="true" aria-labelledby="m28-title" hidden>
+        <div class="modal-backdrop" data-close></div>
+        <div class="modal-card" style="--accent:#2d6a4f">
+          <button class="modal-close" data-close aria-label="Close">&times;</button>
+          <span class="chip">Great Parks</span>
+          <h2 id="m28-title" class="modal-pos">Conservation &amp; Parks Technician – PT (Glenwood Gardens, Woodlawn)</h2>
+          <dl class="details">
+            <div><dt>Pay</dt><dd class="big">$15.16 / hr</dd></div>
+            <div><dt>Type</dt><dd>Part-time</dd></div>
+            <div><dt>Deadline</dt><dd>posted 7 days ago</dd></div>
+            <div><dt>Notes</dt><dd>Verified on ADP portal.</dd></div>
+            <div><dt>Employer</dt><dd>Great Parks of Hamilton County</dd></div>
+          </dl>
+          <a class="apply" href="https://workforcenow.adp.com/mascsr/default/mdf/recruitment/recruitment.html?cid=6137da04-9e31-424a-959e-65ee92ddcfe7&amp;jobId=616033" target="_blank" rel="noopener noreferrer">Open application &nearr;</a>
+        </div>
+      </div>
+      <div class="modal" id="m29" role="dialog" aria-modal="true" aria-labelledby="m29-title" hidden>
+        <div class="modal-backdrop" data-close></div>
+        <div class="modal-card" style="--accent:#2d6a4f">
+          <button class="modal-close" data-close aria-label="Close">&times;</button>
+          <span class="chip">Great Parks</span>
+          <h2 id="m29-title" class="modal-pos">Communications Intern – PT (Cincinnati)</h2>
+          <dl class="details">
+            <div><dt>Pay</dt><dd class="big">$20.00 / hr</dd></div>
+            <div><dt>Type</dt><dd>Intern / Part-time</dd></div>
+            <div><dt>Deadline</dt><dd>posted today</dd></div>
+            <div><dt>Notes</dt><dd>Verified on ADP portal. Requisition 2506.</dd></div>
+            <div><dt>Employer</dt><dd>Great Parks of Hamilton County</dd></div>
+          </dl>
+          <a class="apply" href="https://workforcenow.adp.com/mascsr/default/mdf/recruitment/recruitment.html?cid=6137da04-9e31-424a-959e-65ee92ddcfe7&amp;jobId=616676" target="_blank" rel="noopener noreferrer">Open application &nearr;</a>
+        </div>
+      </div>
+      <div class="modal" id="m30" role="dialog" aria-modal="true" aria-labelledby="m30-title" hidden>
+        <div class="modal-backdrop" data-close></div>
+        <div class="modal-card" style="--accent:#2d6a4f">
+          <button class="modal-close" data-close aria-label="Close">&times;</button>
+          <span class="chip">Great Parks</span>
+          <h2 id="m30-title" class="modal-pos">Education Intern (Cincinnati)</h2>
+          <dl class="details">
+            <div><dt>Pay</dt><dd class="big">$15.00 / hr</dd></div>
+            <div><dt>Type</dt><dd>Intern / Part-time</dd></div>
+            <div><dt>Deadline</dt><dd>posted 28 days ago</dd></div>
+            <div><dt>Notes</dt><dd>Verified on ADP portal.</dd></div>
+            <div><dt>Employer</dt><dd>Great Parks of Hamilton County</dd></div>
+          </dl>
+          <a class="apply" href="https://workforcenow.adp.com/mascsr/default/mdf/recruitment/recruitment.html?cid=6137da04-9e31-424a-959e-65ee92ddcfe7&amp;jobId=614258" target="_blank" rel="noopener noreferrer">Open application &nearr;</a>
+        </div>
+      </div>
+      <div class="modal" id="m31" role="dialog" aria-modal="true" aria-labelledby="m31-title" hidden>
+        <div class="modal-backdrop" data-close></div>
+        <div class="modal-card" style="--accent:#2d6a4f">
+          <button class="modal-close" data-close aria-label="Close">&times;</button>
+          <span class="chip">Great Parks</span>
+          <h2 id="m31-title" class="modal-pos">Outdoor Educator / Day Camp Counselor</h2>
+          <dl class="details">
+            <div><dt>Pay</dt><dd class="big">$16.68 / hr</dd></div>
+            <div><dt>Type</dt><dd>Part-time</dd></div>
+            <div><dt>Deadline</dt><dd>posted 20 days ago</dd></div>
+            <div><dt>Notes</dt><dd>Verified on ADP portal.</dd></div>
+            <div><dt>Employer</dt><dd>Great Parks of Hamilton County</dd></div>
+          </dl>
+          <a class="apply" href="https://workforcenow.adp.com/mascsr/default/mdf/recruitment/recruitment.html?cid=6137da04-9e31-424a-959e-65ee92ddcfe7&amp;jobId=614959" target="_blank" rel="noopener noreferrer">Open application &nearr;</a>
+        </div>
+      </div>
+      <div class="modal" id="m32" role="dialog" aria-modal="true" aria-labelledby="m32-title" hidden>
+        <div class="modal-backdrop" data-close></div>
+        <div class="modal-card" style="--accent:#2d6a4f">
+          <button class="modal-close" data-close aria-label="Close">&times;</button>
+          <span class="chip">Great Parks</span>
+          <h2 id="m32-title" class="modal-pos">Assistant Guest Experiences Manager I (Loveland)</h2>
+          <dl class="details">
+            <div><dt>Pay</dt><dd class="big">$16.68 / hr</dd></div>
+            <div><dt>Type</dt><dd>Part-time</dd></div>
+            <div><dt>Deadline</dt><dd>posted 10 days ago</dd></div>
+            <div><dt>Notes</dt><dd>Verified on ADP portal.</dd></div>
+            <div><dt>Employer</dt><dd>Great Parks of Hamilton County</dd></div>
+          </dl>
+          <a class="apply" href="https://workforcenow.adp.com/mascsr/default/mdf/recruitment/recruitment.html?cid=6137da04-9e31-424a-959e-65ee92ddcfe7&amp;jobId=615937" target="_blank" rel="noopener noreferrer">Open application &nearr;</a>
+        </div>
+      </div>
+      <div class="modal" id="m33" role="dialog" aria-modal="true" aria-labelledby="m33-title" hidden>
+        <div class="modal-backdrop" data-close></div>
+        <div class="modal-card" style="--accent:#2d6a4f">
+          <button class="modal-close" data-close aria-label="Close">&times;</button>
+          <span class="chip">Great Parks</span>
+          <h2 id="m33-title" class="modal-pos">Assistant Guest Experiences Manager I (Cincinnati)</h2>
+          <dl class="details">
+            <div><dt>Pay</dt><dd class="big">$16.68 / hr</dd></div>
+            <div><dt>Type</dt><dd>Part-time</dd></div>
+            <div><dt>Deadline</dt><dd>posted 10 days ago</dd></div>
+            <div><dt>Notes</dt><dd>Verified on ADP portal.</dd></div>
+            <div><dt>Employer</dt><dd>Great Parks of Hamilton County</dd></div>
+          </dl>
+          <a class="apply" href="https://workforcenow.adp.com/mascsr/default/mdf/recruitment/recruitment.html?cid=6137da04-9e31-424a-959e-65ee92ddcfe7&amp;jobId=615932" target="_blank" rel="noopener noreferrer">Open application &nearr;</a>
+        </div>
+      </div>
+      <div class="modal" id="m34" role="dialog" aria-modal="true" aria-labelledby="m34-title" hidden>
+        <div class="modal-backdrop" data-close></div>
+        <div class="modal-card" style="--accent:#2d6a4f">
+          <button class="modal-close" data-close aria-label="Close">&times;</button>
+          <span class="chip">Great Parks</span>
+          <h2 id="m34-title" class="modal-pos">Assistant Guest Experiences Manager II (Cincinnati)</h2>
+          <dl class="details">
+            <div><dt>Pay</dt><dd class="big">$18.35 / hr</dd></div>
+            <div><dt>Type</dt><dd>Part-time</dd></div>
+            <div><dt>Deadline</dt><dd>posted 5 days ago</dd></div>
+            <div><dt>Notes</dt><dd>Verified on ADP portal. (ADP label says &#x27;Annually&#x27; but rate is clearly hourly.)</dd></div>
+            <div><dt>Employer</dt><dd>Great Parks of Hamilton County</dd></div>
+          </dl>
+          <a class="apply" href="https://workforcenow.adp.com/mascsr/default/mdf/recruitment/recruitment.html?cid=6137da04-9e31-424a-959e-65ee92ddcfe7&amp;jobId=616282" target="_blank" rel="noopener noreferrer">Open application &nearr;</a>
+        </div>
+      </div>
+      <div class="modal" id="m35" role="dialog" aria-modal="true" aria-labelledby="m35-title" hidden>
+        <div class="modal-backdrop" data-close></div>
+        <div class="modal-card" style="--accent:#2d6a4f">
+          <button class="modal-close" data-close aria-label="Close">&times;</button>
+          <span class="chip">Great Parks</span>
+          <h2 id="m35-title" class="modal-pos">Guest Experiences Attendant III (Harrison)</h2>
+          <dl class="details">
+            <div><dt>Pay</dt><dd class="big">$13.80 / hr</dd></div>
+            <div><dt>Type</dt><dd>Part-time</dd></div>
+            <div><dt>Deadline</dt><dd>posted 4 days ago</dd></div>
+            <div><dt>Notes</dt><dd>Verified on ADP portal.</dd></div>
+            <div><dt>Employer</dt><dd>Great Parks of Hamilton County</dd></div>
+          </dl>
+          <a class="apply" href="https://workforcenow.adp.com/mascsr/default/mdf/recruitment/recruitment.html?cid=6137da04-9e31-424a-959e-65ee92ddcfe7&amp;jobId=616413" target="_blank" rel="noopener noreferrer">Open application &nearr;</a>
+        </div>
+      </div>
+      <div class="modal" id="m36" role="dialog" aria-modal="true" aria-labelledby="m36-title" hidden>
+        <div class="modal-backdrop" data-close></div>
+        <div class="modal-card" style="--accent:#2d6a4f">
+          <button class="modal-close" data-close aria-label="Close">&times;</button>
+          <span class="chip">Great Parks</span>
+          <h2 id="m36-title" class="modal-pos">Guest Experiences Attendant III (Little Miami Golf Center, Newtown)</h2>
+          <dl class="details">
+            <div><dt>Pay</dt><dd class="big">$13.80 / hr</dd></div>
+            <div><dt>Type</dt><dd>Part-time</dd></div>
+            <div><dt>Deadline</dt><dd>posted 21 days ago</dd></div>
+            <div><dt>Notes</dt><dd>Verified on ADP portal.</dd></div>
+            <div><dt>Employer</dt><dd>Great Parks of Hamilton County</dd></div>
+          </dl>
+          <a class="apply" href="https://workforcenow.adp.com/mascsr/default/mdf/recruitment/recruitment.html?cid=6137da04-9e31-424a-959e-65ee92ddcfe7&amp;jobId=614873" target="_blank" rel="noopener noreferrer">Open application &nearr;</a>
+        </div>
+      </div>
+      <div class="modal" id="m37" role="dialog" aria-modal="true" aria-labelledby="m37-title" hidden>
+        <div class="modal-backdrop" data-close></div>
+        <div class="modal-card" style="--accent:#2d6a4f">
+          <button class="modal-close" data-close aria-label="Close">&times;</button>
+          <span class="chip">Great Parks</span>
+          <h2 id="m37-title" class="modal-pos">Guest Experiences Attendant II (Newtown)</h2>
+          <dl class="details">
+            <div><dt>Pay</dt><dd class="big">$13.00 / hr</dd></div>
+            <div><dt>Type</dt><dd>Part-time</dd></div>
+            <div><dt>Deadline</dt><dd>posted 21 days ago</dd></div>
+            <div><dt>Notes</dt><dd>Verified on ADP portal.</dd></div>
+            <div><dt>Employer</dt><dd>Great Parks of Hamilton County</dd></div>
+          </dl>
+          <a class="apply" href="https://workforcenow.adp.com/mascsr/default/mdf/recruitment/recruitment.html?cid=6137da04-9e31-424a-959e-65ee92ddcfe7&amp;jobId=614872" target="_blank" rel="noopener noreferrer">Open application &nearr;</a>
+        </div>
+      </div>
+      <div class="modal" id="m38" role="dialog" aria-modal="true" aria-labelledby="m38-title" hidden>
+        <div class="modal-backdrop" data-close></div>
+        <div class="modal-card" style="--accent:#2d6a4f">
+          <button class="modal-close" data-close aria-label="Close">&times;</button>
+          <span class="chip">Great Parks</span>
+          <h2 id="m38-title" class="modal-pos">Shift Leader (Cincinnati)</h2>
+          <dl class="details">
+            <div><dt>Pay</dt><dd class="big">$15.16 / hr</dd></div>
+            <div><dt>Type</dt><dd>Part-time</dd></div>
+            <div><dt>Deadline</dt><dd>posted 10 days ago</dd></div>
+            <div><dt>Notes</dt><dd>Verified on ADP portal. (ADP label says &#x27;Annually&#x27; but rate is clearly hourly.)</dd></div>
+            <div><dt>Employer</dt><dd>Great Parks of Hamilton County</dd></div>
+          </dl>
+          <a class="apply" href="https://workforcenow.adp.com/mascsr/default/mdf/recruitment/recruitment.html?cid=6137da04-9e31-424a-959e-65ee92ddcfe7&amp;jobId=615936" target="_blank" rel="noopener noreferrer">Open application &nearr;</a>
+        </div>
+      </div>
+      <div class="modal" id="m39" role="dialog" aria-modal="true" aria-labelledby="m39-title" hidden>
+        <div class="modal-backdrop" data-close></div>
+        <div class="modal-card" style="--accent:#2d6a4f">
+          <button class="modal-close" data-close aria-label="Close">&times;</button>
+          <span class="chip">Great Parks</span>
+          <h2 id="m39-title" class="modal-pos">Golf Maintenance Technician – PT (Anderson Township)</h2>
+          <dl class="details">
+            <div><dt>Pay</dt><dd class="big">$15.16 / hr</dd></div>
+            <div><dt>Type</dt><dd>Part-time</dd></div>
+            <div><dt>Deadline</dt><dd>posted 25 days ago</dd></div>
+            <div><dt>Notes</dt><dd>Verified on ADP portal.</dd></div>
+            <div><dt>Employer</dt><dd>Great Parks of Hamilton County</dd></div>
+          </dl>
+          <a class="apply" href="https://workforcenow.adp.com/mascsr/default/mdf/recruitment/recruitment.html?cid=6137da04-9e31-424a-959e-65ee92ddcfe7&amp;jobId=614573" target="_blank" rel="noopener noreferrer">Open application &nearr;</a>
+        </div>
+      </div>
+      <div class="modal" id="m40" role="dialog" aria-modal="true" aria-labelledby="m40-title" hidden>
+        <div class="modal-backdrop" data-close></div>
+        <div class="modal-card" style="--accent:#6b3fa0">
+          <button class="modal-close" data-close aria-label="Close">&times;</button>
+          <span class="chip">Anderson Parks</span>
+          <h2 id="m40-title" class="modal-pos">Operations Staff IV (parks / maintenance / custodial)</h2>
+          <dl class="details">
+            <div><dt>Pay</dt><dd class="big">$19.00 / hr</dd></div>
+            <div><dt>Type</dt><dd>Part-time (Non-Exempt)</dd></div>
+            <div><dt>Deadline</dt><dd>not listed</dd></div>
+            <div><dt>Notes</dt><dd>Verified on SAASHR portal. Tags: parks, maintenance, custodial.</dd></div>
+            <div><dt>Employer</dt><dd>Anderson Park District</dd></div>
+          </dl>
+          <a class="apply" href="https://secure7.saashr.com/ta/6212182.careers?ShowAllOpenings=1" target="_blank" rel="noopener noreferrer">Open application &nearr;</a>
+        </div>
+      </div>
+      <div class="modal" id="m41" role="dialog" aria-modal="true" aria-labelledby="m41-title" hidden>
+        <div class="modal-backdrop" data-close></div>
+        <div class="modal-card" style="--accent:#6b3fa0">
+          <button class="modal-close" data-close aria-label="Close">&times;</button>
+          <span class="chip">Anderson Parks</span>
+          <h2 id="m41-title" class="modal-pos">Operations Staff I (landscaping / park maintenance)</h2>
+          <dl class="details">
+            <div><dt>Pay</dt><dd class="big">$14.25 / hr</dd></div>
+            <div><dt>Type</dt><dd>Part-time (Non-Exempt)</dd></div>
+            <div><dt>Deadline</dt><dd>not listed</dd></div>
+            <div><dt>Notes</dt><dd>Verified on SAASHR portal. Mon–Fri, 6:00 am – 2:30 pm.</dd></div>
+            <div><dt>Employer</dt><dd>Anderson Park District</dd></div>
+          </dl>
+          <a class="apply" href="https://secure7.saashr.com/ta/6212182.careers?ShowAllOpenings=1" target="_blank" rel="noopener noreferrer">Open application &nearr;</a>
+        </div>
+      </div>
+      <div class="modal" id="m42" role="dialog" aria-modal="true" aria-labelledby="m42-title" hidden>
+        <div class="modal-backdrop" data-close></div>
+        <div class="modal-card" style="--accent:#6b3fa0">
+          <button class="modal-close" data-close aria-label="Close">&times;</button>
+          <span class="chip">Anderson Parks</span>
+          <h2 id="m42-title" class="modal-pos">Recreation Staff I (Summer Day Camp Counselor)</h2>
+          <dl class="details">
+            <div><dt>Pay</dt><dd class="big">$14.25 / hr</dd></div>
+            <div><dt>Type</dt><dd>Seasonal / Part-time (Non-Exempt)</dd></div>
+            <div><dt>Deadline</dt><dd>summer 2026</dd></div>
+            <div><dt>Notes</dt><dd>Verified on SAASHR portal. Mentors ages 3.5–11; must be 18+.</dd></div>
+            <div><dt>Employer</dt><dd>Anderson Park District</dd></div>
+          </dl>
+          <a class="apply" href="https://secure7.saashr.com/ta/6212182.careers?ShowAllOpenings=1" target="_blank" rel="noopener noreferrer">Open application &nearr;</a>
+        </div>
+      </div>
+      <div class="modal" id="m43" role="dialog" aria-modal="true" aria-labelledby="m43-title" hidden>
+        <div class="modal-backdrop" data-close></div>
+        <div class="modal-card" style="--accent:#b9731d">
+          <button class="modal-close" data-close aria-label="Close">&times;</button>
+          <span class="chip">Delhi Twp</span>
+          <h2 id="m43-title" class="modal-pos">Park Maintenance Worker</h2>
+          <dl class="details">
+            <div><dt>Pay</dt><dd class="big">not listed</dd></div>
+            <div><dt>Type</dt><dd>Full-time</dd></div>
+            <div><dt>Deadline</dt><dd>Open until filled (posted Feb 5, 2026)</dd></div>
+            <div><dt>Notes</dt><dd>Verified directly on delhi.oh.us</dd></div>
+            <div><dt>Employer</dt><dd>Delhi Township</dd></div>
+          </dl>
+          <a class="apply" href="https://www.delhi.oh.us/Jobs.aspx?UniqueId=104&amp;From=All&amp;CommunityJobs=False&amp;JobID=Park-Maintenance-Worker-FullTime-22" target="_blank" rel="noopener noreferrer">Open application &nearr;</a>
+        </div>
+      </div>
+      <div class="modal" id="m44" role="dialog" aria-modal="true" aria-labelledby="m44-title" hidden>
+        <div class="modal-backdrop" data-close></div>
+        <div class="modal-card" style="--accent:#b9731d">
+          <button class="modal-close" data-close aria-label="Close">&times;</button>
+          <span class="chip">Delhi Twp</span>
+          <h2 id="m44-title" class="modal-pos">Seasonal Parks &amp; Recreation Worker</h2>
+          <dl class="details">
+            <div><dt>Pay</dt><dd class="big">not listed</dd></div>
+            <div><dt>Type</dt><dd>Part-time / Seasonal</dd></div>
+            <div><dt>Deadline</dt><dd>Open until filled (posted Feb 5, 2026)</dd></div>
+            <div><dt>Notes</dt><dd>Verified directly</dd></div>
+            <div><dt>Employer</dt><dd>Delhi Township</dd></div>
+          </dl>
+          <a class="apply" href="https://www.delhi.oh.us/Jobs.aspx?UniqueId=104&amp;From=All&amp;CommunityJobs=False&amp;JobID=Seasonal-Parks-Recreation-Worker-PartTim-24" target="_blank" rel="noopener noreferrer">Open application &nearr;</a>
+        </div>
+      </div>
+      <div class="modal" id="m45" role="dialog" aria-modal="true" aria-labelledby="m45-title" hidden>
+        <div class="modal-backdrop" data-close></div>
+        <div class="modal-card" style="--accent:#a03065">
+          <button class="modal-close" data-close aria-label="Close">&times;</button>
+          <span class="chip">Indian Hill</span>
+          <h2 id="m45-title" class="modal-pos">Part-time Grand Valley Preserve Worker</h2>
+          <dl class="details">
+            <div><dt>Pay</dt><dd class="big">not listed</dd></div>
+            <div><dt>Type</dt><dd>Part-time</dd></div>
+            <div><dt>Deadline</dt><dd>not listed</dd></div>
+            <div><dt>Notes</dt><dd>Verified</dd></div>
+            <div><dt>Employer</dt><dd>Village of Indian Hill</dd></div>
+          </dl>
+          <a class="apply" href="https://indianhill.gov/job/part-time-grand-valley-preserve-worker/" target="_blank" rel="noopener noreferrer">Open application &nearr;</a>
+        </div>
+      </div>
+      <div class="modal" id="m46" role="dialog" aria-modal="true" aria-labelledby="m46-title" hidden>
+        <div class="modal-backdrop" data-close></div>
+        <div class="modal-card" style="--accent:#0d7490">
+          <button class="modal-close" data-close aria-label="Close">&times;</button>
+          <span class="chip">Mill Creek</span>
+          <h2 id="m46-title" class="modal-pos">Environmental Education Programs Intern (Seeds of Change)</h2>
+          <dl class="details">
+            <div><dt>Pay</dt><dd class="big">Grant-funded (amount not published)</dd></div>
+            <div><dt>Type</dt><dd>Seasonal / Intern</dd></div>
+            <div><dt>Deadline</dt><dd>May 11 – Aug 14, 2026</dd></div>
+            <div><dt>Notes</dt><dd>Restricted to Cincinnati State students via grant.</dd></div>
+            <div><dt>Employer</dt><dd>Mill Creek Alliance</dd></div>
+          </dl>
+          <a class="apply" href="https://cincinnatistate-csm.symplicity.com/students/app/jobs/detail/ccb52577dea5305827978d9aaf101b08" target="_blank" rel="noopener noreferrer">Open application &nearr;</a>
+        </div>
+      </div>
+      <div class="modal" id="m47" role="dialog" aria-modal="true" aria-labelledby="m47-title" hidden>
+        <div class="modal-backdrop" data-close></div>
+        <div class="modal-card" style="--accent:#0d7490">
+          <button class="modal-close" data-close aria-label="Close">&times;</button>
+          <span class="chip">Mill Creek</span>
+          <h2 id="m47-title" class="modal-pos">Blue Team Intern / Lab Leader</h2>
+          <dl class="details">
+            <div><dt>Pay</dt><dd class="big">not listed</dd></div>
+            <div><dt>Type</dt><dd>1-year position</dd></div>
+            <div><dt>Deadline</dt><dd>reopening 2026</dd></div>
+            <div><dt>Notes</dt><dd>Direct contact required. Not a public posting yet.</dd></div>
+            <div><dt>Employer</dt><dd>Mill Creek Alliance</dd></div>
+          </dl>
+          <a class="apply" href="mailto:bhimburg@themillcreekalliance.org" target="_blank" rel="noopener noreferrer">Email to apply &nearr;</a>
+        </div>
+      </div>
+      <div class="modal" id="m48" role="dialog" aria-modal="true" aria-labelledby="m48-title" hidden>
+        <div class="modal-backdrop" data-close></div>
+        <div class="modal-card" style="--accent:#6b7a1a">
+          <button class="modal-close" data-close aria-label="Close">&times;</button>
+          <span class="chip">Green Twp</span>
+          <h2 id="m48-title" class="modal-pos">Summer Help 2026 (parks/maintenance — image-only posting)</h2>
+          <dl class="details">
+            <div><dt>Pay</dt><dd class="big">not listed</dd></div>
+            <div><dt>Type</dt><dd>Seasonal</dd></div>
+            <div><dt>Deadline</dt><dd>not listed</dd></div>
+            <div><dt>Notes</dt><dd>Posting is an image on the careers page — details not machine-readable. Call 513-574-4848 to confirm specifics.</dd></div>
+            <div><dt>Employer</dt><dd>Green Township</dd></div>
+          </dl>
+          <a class="apply" href="https://www.greentwp.org/job-openings" target="_blank" rel="noopener noreferrer">Open application &nearr;</a>
+        </div>
+      </div>
+
+<script>
+(function() {
+  var grid = document.getElementById('grid');
+  var body = document.body;
+  var openModal = null;
+
+  function show(idx) {
+    var m = document.getElementById('m' + idx);
+    if (!m) return;
+    m.hidden = false;
+    openModal = m;
+    body.classList.add('modal-open');
+    // Focus the close button for accessibility
+    var closeBtn = m.querySelector('.modal-close');
+    if (closeBtn) closeBtn.focus();
+  }
+  function hide() {
+    if (!openModal) return;
+    openModal.hidden = true;
+    openModal = null;
+    body.classList.remove('modal-open');
+  }
+
+  grid.addEventListener('click', function(e) {
+    var t = e.target.closest('.tile');
+    if (!t) return;
+    show(t.getAttribute('data-idx'));
+  });
+
+  document.addEventListener('click', function(e) {
+    if (e.target.matches('[data-close]')) hide();
+  });
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') hide();
+  });
+})();
+</script>
+</body>
+</html>
